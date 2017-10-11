@@ -9,8 +9,7 @@ import java.net.HttpURLConnection
 import java.net.URL
 import java.net.URLEncoder
 
-class BaseRepository() {
-
+abstract class BaseRepository() {
     fun execute(fullParameters: FullParameters): HttpResponse {
         val url = URL("${fullParameters.url}${getQuery(fullParameters.parameters)}")
 
@@ -37,7 +36,7 @@ class BaseRepository() {
             val strBuilder = StringBuilder()
             val br = BufferedReader(InputStreamReader(inputStream))
 
-            for(line in br.readLine()) {
+            for(line in br.readLines()) {
                 strBuilder.append(line)
             }
             strBuilder.toString()

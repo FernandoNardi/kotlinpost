@@ -6,7 +6,7 @@ class EndPointConstants() {
     }
 
     object POST {
-        val ALL_POSTS: String = "post"
-        val SINGLE_POSTS: String = "post"
+        val ALL_POSTS: String = "posts"
+        val SINGLE_POST: String = "post"
     }
 }
