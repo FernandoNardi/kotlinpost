@@ -2,7 +2,6 @@ package ui;
 
 import business.PostBusiness;
 import entity.PostEntity;
-
 import javax.swing.*;
 import javax.swing.event.ListSelectionEvent;
 import javax.swing.event.ListSelectionListener;
@@ -33,7 +32,8 @@ public class PostListForm extends JFrame implements ListSelectionListener {
         int postId;
         if(e.getValueIsAdjusting()){
             postId = Integer.parseInt(this.tablePost.getValueAt(this.tablePost.getSelectedRow(), 0).toString());
-            JOptionPane.showMessageDialog(this, postId);
+//            JOptionPane.showMessageDialog(this, postId);
+            new PostDetailForm(postId);
         }
     }
 
