@@ -19,7 +19,7 @@ class PostBusiness() {
     }
 
     fun getSinglePost(id: Int): PostEntity {
-        val url = "${EndPointConstants.BASE.URL}${EndPointConstants.POST.SINGLE_POST}"
+        val url = "${EndPointConstants.BASE.URL}/${EndPointConstants.POST.SINGLE_POST}"
         val fullParameters = FullParameters(url, OperationMethod.GET, mapOf(Pair("id", id.toString())))
         val response = PostRepository.getSinglePost(fullParameters)
         return Gson().fromJson<List<PostEntity>>(response.jsonResponse, object: TypeToken<List<PostEntity>>() {}.type)[0]

@@ -9,10 +9,9 @@ import java.net.HttpURLConnection
 import java.net.URL
 import java.net.URLEncoder
 
-abstract class BaseRepository() {
+abstract class BaseRepository {
     fun execute(fullParameters: FullParameters): HttpResponse {
         val url = URL("${fullParameters.url}${getQuery(fullParameters.parameters)}")
-
         val conn: HttpURLConnection = url.openConnection() as HttpURLConnection
         conn.readTimeout = 100000
         conn.connectTimeout = 120000
@@ -60,7 +59,7 @@ abstract class BaseRepository() {
             } else {
                 result.append("&")
             }
-            result.append(URLEncoder.encode(param.key, "UTF-8"), "UTF-8")
+            result.append(URLEncoder.encode(param.key, "UTF-8"))
             result.append("=")
             result.append(URLEncoder.encode(param.value, "UTF-8"))
         }
