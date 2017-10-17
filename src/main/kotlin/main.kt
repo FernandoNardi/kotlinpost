@@ -1,10 +1,9 @@
-import business.PostBusiness
+// import business.PostBusiness
 import ui.PostListForm
 
 fun main(args: Array<String>) {
 
+    PostListForm()
 
-    println(PostBusiness().getAllPosts())
-
-//    PostListForm()
+//    println(PostBusiness().getAllPosts())
 }
